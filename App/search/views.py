@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 class HomePage(TemplateView):
-    template_name = "home.html"
+    template_name = "index.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomePage, self).get_context_data(**kwargs)
