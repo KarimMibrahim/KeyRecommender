@@ -7,7 +7,7 @@ urlpatterns = [
     # Examples:
     url(r'^$', HomePage.as_view(), name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^search/', include('search.urls', namespace='search')),
+    url(r'^datasets/', include('search.urls', namespace='search')),
 
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -6,18 +6,30 @@ from django.shortcuts import render
 class HomePage(TemplateView):
     template_name = "index.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(HomePage, self).get_context_data(**kwargs)
-        # context['Important keywords'] = Get the important keywords.
-        return context
 
-
-def search_view(request):
-    if request.method == 'POST':
-        keywords = request.POST['keywords']
-        print (request.POST['keywords'])
-
+def dataset_list_view(request):
+    #returns all datasets we have.
+    datasets = {}  # get datasets
     return render(
         request,
         'search_results.html',
-        {"keywords": keywords})
+        {"datasets": datasets})
+
+
+def dataset_detail_view(request, dataset_id):
+    # get the specific dataset by id
+    dataset = dataset_id  # get the dataset using its id
+    return render(
+        request,
+        'search_results.html',
+        {"dataset": dataset})
+
+# def search_view(request):
+#     if request.method == 'POST':
+#         keywords = request.POST['keywords']
+#         print (request.POST['keywords'])
+
+#     return render(
+#         request,
+#         'search_results.html',
+#         {"keywords": keywords})
