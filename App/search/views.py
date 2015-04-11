@@ -14,9 +14,10 @@ class HomePage(TemplateView):
 
 def search_view(request):
     if request.method == 'POST':
+        keywords = request.POST['keywords']
         print (request.POST['keywords'])
 
     return render(
         request,
         'search_results.html',
-        {})
+        {"keywords": keywords})
