@@ -1,0 +1,66 @@
+# general
+*~
+
+# git
+*.orig
+
+# python
+*.pyc
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# virtual env
+env
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+html_coverage_report
+
+# eclipse
+.project
+.pydevproject
+
+#sqlite3
+*.db
+*.db-journal
+*.sqlite3
+media/user_profils/*
+.settings/
+
+src/*
+media
+.idea/*
+.ropeproject
+staticfiles
+.env
+
+# Vagrant
+.vagrant
+newrelic.ini
+*.sublime-workspace
+*.sublime-project
+
+bower_components/*
+
+*.mo
