@@ -20,11 +20,12 @@ def list_keywords(request):
 
 def dataset_detail_view(request, dataset_name):
     # get the specific dataset by id
-    keywords = dataset_id  # get the dataset using its id
+    keywords = dataset_name  # get the dataset using its id
     return render(
         request,
         'search_results.html',
-        {"keywords": keywords})
+        {"keywords": keywords,
+        "dataset_name": dataset_name})
 
 # def search_view(request):
 #     if request.method == 'POST':
