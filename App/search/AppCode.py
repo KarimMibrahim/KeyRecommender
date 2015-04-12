@@ -1,11 +1,11 @@
-#!/usr/bin/env python 
+#!/usr/bin/env python
 import os
 import re
 import urllib2
 import nltk.data
 import logging
 from bs4 import BeautifulSoup
-import numpy as np 
+import numpy as np
 from gensim.models import Word2Vec
 from tempfile import TemporaryFile
 from sklearn.ensemble import RandomForestClassifier
@@ -67,8 +67,8 @@ if __name__ == '__main__':
 		    keywords = txt['content'].strip()
 		if len(description.join(keywords))>1:
         	    dataset_descriptions.append(" ".join(KaggleWord2VecUtility.review_to_wordlist(description.join(keywords), True)))
-     
+
     tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
-    sentences = []  
+    sentences = []
     for review in dataset_descriptions:
         sentences += KaggleWord2VecUtility.review_to_sentences(review, tokenizer)

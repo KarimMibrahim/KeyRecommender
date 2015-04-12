@@ -61,9 +61,9 @@
     </nav>
 
 	<!-- Section: intro -->
-    <section >
-		<img src="img/bg22.jpg" alt="" class="img-responsive" /> 
-<!--
+    <section id = "intro" class= "intro">
+		<!-- <img src="img/bg22.jpg" alt="" class="img-responsive" /> --> 
+<!-- -->
 		<div class="slogan">
 			<h2>WELCOME TO <span class="text_color">Key Recommender</span> </h2>
 			<h4>We provide solutions for hunting relevent data</h4>
@@ -73,7 +73,7 @@
 				<i class="fa fa-angle-double-down animated"></i>
 			</a>
 		</div>
--->
+
     </section>
 	<!-- /Section: intro -->
 

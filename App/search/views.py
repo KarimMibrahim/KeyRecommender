@@ -1,4 +1,3 @@
-from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 from django.shortcuts import render
 from mails.models import ContactUs
@@ -11,22 +10,21 @@ class HomePage(CreateView):
     success_url = "https://www.google.com"
 
 
-def dataset_list_view(request):
-    #returns all datasets we have.
-    datasets = {}  # get datasets
+def list_keywords(request):
+    keywords = ['ahmed', 'sa3d', 'hi']  # get the dataset using its id
     return render(
         request,
         'search_results.html',
-        {"datasets": datasets})
+        {"keywords": keywords})
 
 
-def dataset_detail_view(request, dataset_id):
+def dataset_detail_view(request, dataset_name):
     # get the specific dataset by id
-    dataset = dataset_id  # get the dataset using its id
+    keywords = dataset_id  # get the dataset using its id
     return render(
         request,
         'search_results.html',
-        {"dataset": dataset})
+        {"keywords": keywords})
 
 # def search_view(request):
 #     if request.method == 'POST':
