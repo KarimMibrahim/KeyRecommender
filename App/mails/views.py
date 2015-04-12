@@ -1,8 +1,11 @@
-from django.shortcuts import render
-from django.views.generic.edit import FormView
-from .forms import ContactUsForm
+# from django.shortcuts import render
+from django.views.generic.edit import CreateView
+# from .forms import ContactUsForm
+from .models import ContactUs
 
 
-class ContactUsView(FormView):
+class ContactUsView(CreateView):
     template_name = 'contactus_thanks.html'
-    form_class = ContactUsForm
+    model = ContactUs
+    fields = ['name', 'subject', 'message', 'email']
+    success_url = "https://www.google.com"

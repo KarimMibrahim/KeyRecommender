@@ -1,10 +1,14 @@
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 from django.shortcuts import render
-# from django.views.generic.list import ListView
+from mails.models import ContactUs
 
 
-class HomePage(TemplateView):
+class HomePage(CreateView):
     template_name = "index.html"
+    model = ContactUs
+    fields = ['name', 'subject', 'message', 'email']
+    success_url = "https://www.google.com"
 
 
 def dataset_list_view(request):
