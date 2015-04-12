@@ -302,10 +302,9 @@ hr {
 ============================ */
 
 .intro {
-	width:100%;
 	position:relative;
 	
-	background: url(../img/bg1.jpg) no-repeat top center;
+	background: url(../img/bg2.jpg) ;
 }
 
 #intro.intro {
