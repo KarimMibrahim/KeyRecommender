@@ -35,6 +35,14 @@ def getFeatureVectors(reviews, model, num_features):
        counter = counter + 1.
     return reviewFeatureVecs
 
+def extract_entities(content):
+    entities = []
+    for sent in nltk.sent_tokenize(content):
+    	for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(sent))):
+        	if isinstance(chunk, nltk.tree.Tree):               
+                    entities.append(' '.join(c[0] for c in chunk.leaves()))
+    return entities
+
 
 if __name__ == '__main__':
 
@@ -51,6 +59,9 @@ if __name__ == '__main__':
 		keywords = ""
 		if txt is not None:
 		    description = re.sub("Expand$","",txt.get_text().strip()).strip()
+		new_entity=extract_entities(description)
+		for ne in new_entity:
+		    print ne
 		txt = soup.find(attrs={"name": "keywords"})
 		if txt is not None:
 		    keywords = txt['content'].strip()
@@ -61,8 +72,3 @@ if __name__ == '__main__':
     sentences = []  
     for review in dataset_descriptions:
         sentences += KaggleWord2VecUtility.review_to_sentences(review, tokenizer)
-
-    logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s',\
-        level=logging.INFO)
-    for e in sentences:
-	print e
