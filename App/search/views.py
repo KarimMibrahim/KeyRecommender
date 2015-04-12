@@ -73,7 +73,7 @@ def dataset_detail_view(request, dataset_name):
 	if txt is not None:
 	    description = re.sub("Expand$","",txt.get_text().strip()).strip()
     new_entity=extract_entities(description)
-    keywords =new_entity   # get the dataset using its id
+    keywords =set(new_entity)   # get the dataset using its id
     return render(
         request,
         'search_results.html',
